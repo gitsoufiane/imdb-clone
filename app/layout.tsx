@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "imdb clone",
   description: "Imdb clone with nextjs",
+  creator: "soufiane chaoufi",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

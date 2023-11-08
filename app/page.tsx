@@ -1,5 +1,5 @@
 import { Results } from "@/app/components";
-
+import { SubNavbar, SearchBox } from "@/app/components";
 const API_KEY = process.env.API_KEY;
 
 export default async function Home({ searchParams }: { searchParams: any }) {
@@ -21,6 +21,8 @@ export default async function Home({ searchParams }: { searchParams: any }) {
 
   return (
     <main className="">
+      <SubNavbar />
+      <SearchBox />
       <Results results={results} />
     </main>
   );

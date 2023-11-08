@@ -1,13 +1,9 @@
-"use client";
 import Link from "next/link";
 import { IconType } from "react-icons";
-import { FaHouse, FaMoon, FaPerson, FaSun } from "react-icons/fa6";
-import { useTheme } from "next-themes";
+import { FaHouse, FaPerson } from "react-icons/fa6";
+import { DarkModeSwitcher } from "./DarkModeSwitcher";
 
 export function Navbar() {
-  const { theme, setTheme, systemTheme } = useTheme();
-  const currentTheme = theme === "system" ? systemTheme : theme;
-
   return (
     <nav className="flex justify-between mx-2 max-w-6xl sm:mx-auto items-center py-6">
       <div className="flex ">
@@ -15,17 +11,7 @@ export function Navbar() {
         <MenuItem title="About" address="/about" Icon={FaPerson} />
       </div>
       <div className="flex items-center space-x-5">
-        {currentTheme === "dark" ? (
-          <FaSun
-            onClick={() => setTheme("light")}
-            className="text-xl cursor-pointer hover:text-amber-500"
-          />
-        ) : (
-          <FaMoon
-            onClick={() => setTheme("dark")}
-            className="text-xl cursor-pointer hover:text-amber-500"
-          />
-        )}
+        <DarkModeSwitcher />
         <Link href="/">
           <h2 className="text-2xl">
             <span className="font-bold bg-amber-500 py-1 px-2 rounded-lg mr-1">IMDb</span>

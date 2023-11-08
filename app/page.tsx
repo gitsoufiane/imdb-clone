@@ -21,8 +21,6 @@ export default async function Home({ searchParams }: { searchParams: any }) {
 
   return (
     <main className="">
-      <SubNavbar />
-      <SearchBox />
       <Results results={results} />
     </main>
   );

@@ -1,5 +1,4 @@
 import { Results } from "@/app/components";
-import { SubNavbar, SearchBox } from "@/app/components";
 
 const API_KEY = process.env.API_KEY;
 
@@ -20,10 +19,8 @@ export default async function Home({ params }: { params: any }) {
 
   return (
     <main className="">
-      <SubNavbar />
-      <SearchBox />
-      {results.length === 0 && <h1 className="text-center pt-6">No results found</h1>}
-      {results.length && <Results results={results} />}
+      {results.length === 0 ? <h1 className="text-center pt-6">No results found</h1> : null}
+      {results.length ? <Results results={results} /> : null}
     </main>
   );
 }

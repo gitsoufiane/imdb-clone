@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Navbar, ThemeProviders, SubNavbar } from "@/app/components";
+import { Navbar, ThemeProviders } from "@/app/components";
 import clsx from "clsx";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,7 +18,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={clsx(inter.className)}>
         <ThemeProviders>
           <Navbar />
-          <SubNavbar />
           {children}
         </ThemeProviders>
       </body>

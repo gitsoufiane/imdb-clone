@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar, ThemeProviders, SubNavbar, SearchBox } from "@/app/components";
 import clsx from "clsx";
-
-const inter = Inter({ subsets: ["latin"] });
+import { inter } from "@/app/fonts";
 
 export const metadata: Metadata = {
   title: "imdb clone",

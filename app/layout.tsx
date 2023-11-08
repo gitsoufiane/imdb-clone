@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/app/components";
+import { Navbar, ThemeProviders, SubNavbar } from "@/app/components";
 import clsx from "clsx";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,8 +16,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={clsx(inter.className)}>
-        <Navbar />
-        {children}
+        <ThemeProviders>
+          <Navbar />
+          <SubNavbar />
+          {children}
+        </ThemeProviders>
       </body>
     </html>
   );
